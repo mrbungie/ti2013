@@ -1,0 +1,7 @@
+2.
+
+Este diagrama permite solucionar el problema a través de estos puntos:
+
+- Existen entidades profesor, ramo y sesion. Todas poseen las cardinalidades necesarias para ejercer el trabajo. Un profesor puede tener 1 (0) a varios ramos y un ramo se da en 1(0) a varias sesiones, esto último permite las 2 sesiones semanales por 16 semanas y además es lo suficientemente flexible para permitir excepciones a la regla.
+- Una sesión puede evaluarse por todos los alumnos del curso, por lo que cada sesión tiene 1 a varias evaluaciones. La entidad Evaluacion representa esto, y conecta con el alumno, además de guardar la nota y la asistencia del profesor según el alumno.
+- Finalmente, para mantener la funcionalidad Web, se indican los alumnos y a que ramos estan inscritos para que puedan evaluar dentro de lo que les corresponde. Para esto se utiliza la entidad asociativa Alumno_has_Ramo

@@ -1,0 +1,11 @@
+Pregunta 3. Forma B
+
+a. Esta cardinalidad mínima implica que NO pueden existir proveedores que no tengan registros en la base de datos, y desde el punto de vista de gestión, todo proveedor esta justificado, es decir, todos proveen realmente a la Universidad. No es necesariamente razonable, ya que por motivos de fuerza mayor es posible que un proveedor no pueda responder a una Orden y se necesite de urgencia utilizar otro proveedor, y esta base de datos no permitiría realizar esta acción sin ingresar previamente al potencial nuevo proveedor.
+
+b. El atributo precio unitario esta en la linea de orden porque este atributo depende de cada compra que se haga a los proveedores i.e. Un lápiz podría costar 200 pesos hoy, pero quizás cueste 250 pesos mañana. Este esquema tiene la flexibilidad que permite que esta externalidad se pueda registrar sin problemas.
+
+c. Si lo permite. Si bien no esta guardado como dato en si, se puede derivar calculando en función de la fecha actual (NOW) y la fecha de creación (Fecha_Creacion en entidad Escuela). Esto se puede calcular a través de YEAR(NOW()) - YEAR(Fecha_Creacion).
+
+d. Para el primer caso, la fecha máxima se debería ubicar en la entidad Orden_Compra, siendo esta el resumen de una operación de orden de compra y es único para cada instancia de esta operación.
+
+Para el segundo caso, la fecha máxima debería ubicarse en la entidad Linea_Orden_Compra, ya que esta última es la representación de CADA insumo comprado en una Orden de Compra y por tanto, permitiría manejar distintas fechas por distintos insumos.

@@ -1,0 +1,11 @@
+Pregunta 3. Forma A
+
+a. Esta cardinalidad mínima implica que pueden existir proveedores que no tengan registros en la base de datos, y desde el punto de vista de gestión, existen potenciales proveedores que aun no nos prestan servicios pero podrían hacerlo en el futuro. Es totalmente razonable debido a que permite tener proveedores para casos de emergencia.
+
+b. El atributo precio unitario esta en la linea de orden porque este atributo depende de cada compra que se haga a los proveedores i.e. Un lápiz podría costar 200 pesos hoy, pero quizás cueste 250 pesos mañana. Este esquema tiene la flexibilidad que permite que esta externalidad se pueda registrar sin problemas.
+
+c. La antiguedad esta como atributo derivado porque es fácilmente calculable a través de la fecha actual (obtenible) y el atributo Fecha_Creación. Una simple diferencia entre los años de estos dos datos nos permite obtener la antiguedad, específicamente YEAR(NOW()) - YEAR(Fecha_Creacion).
+
+d. Para el primer caso, la fecha máxima se debería ubicar en la entidad Orden_Compra, siendo esta el resumen de una operación de orden de compra y es único para cada instancia de esta operación.
+
+Para el segundo caso, la fecha máxima debería ubicarse en la entidad Linea_Orden_Compra, ya que esta última es la representación de CADA insumo comprado en una Orden de Compra y por tanto, permitiría manejar distintas fechas por distintos insumos.
