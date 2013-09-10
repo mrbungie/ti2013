@@ -2,7 +2,7 @@
 
 mysql_connect('localhost','root','');
 mysql_select_db('une');
-$consulta = "SELECT nombre, apellido, reprobados, promedio FROM alumnos ORDER BY apellido DESC";
+$consulta = "SELECT nombre, apellido, reprobados, promedio FROM alumnos ORDER BY apellido";
 $resultado = mysql_query($consulta);
 $fila = mysql_fetch_assoc($resultado);
 while($fila != null){
