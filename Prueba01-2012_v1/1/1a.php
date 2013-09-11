@@ -11,7 +11,7 @@ while($fila != null){
 	echo $fila['nombre'].' '.$fila['apellido'].' – ';
 	// Recordar: && es Y, mientras que || es O. 
 	// Por otro lado, "or" y "and" también sirven.
-	if( ($promedio >= 5.5 && $reprobados == 0) || ($promedio >= 6.0 && $reprobados <= 1) || ($promedio >= 6.5 && reprobados <= 2) ) 
+	if( ($promedio >= 5.5 && $reprobados == 0) || ($promedio >= 6.0 && $reprobados <= 1) || ($promedio >= 6.5 && $reprobados <= 2) ) 
 		echo 'BECADO';
 	else 
 		echo 'NO BECADO';
